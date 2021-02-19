@@ -5,7 +5,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 # FINANCIAL TIMES
-def ft(content):
+def ft(key, content):
     d = convert_xml_to_dict(content)['rss']['channel']
     data = d['item']
 
@@ -15,6 +15,7 @@ def ft(content):
         else:
             item['section'] = d['title'].lower()
 
+        item['tag'] = key
         item['url'] = item['link']
         item['source'] = 'ft'
         item['date'] = datetime.strptime(item['pubDate'], "%a, %d %b %Y %H:%M:%S %Z")

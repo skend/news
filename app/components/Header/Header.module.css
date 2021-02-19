@@ -1,0 +1,21 @@
+.header {
+    width: 100vw;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.title a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.title a:hover, .title a:focus, .title a:active {
+    text-decoration: underline;
+}
+
+.title {
+    margin-left: 4rem;
+    line-height: 1.15;
+    font-size: 2rem;
+    align-self: flex-start;
+}
