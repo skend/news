@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
@@ -32,8 +33,18 @@ function Home({ data }) {
           {data.map((value, index) => {
             return <Link href={value.url} key={value._id}>
                 <a className={styles.card}>
-                  <h3>{value.title}</h3>
-                  <p>{value.description}</p>
+                  <div className={styles.imagebox}>
+                    <Image
+                      src={process.env.S3_PUBLIC_URL + value.img_name}
+                      alt="Picture description"
+                      layout="fill"
+                      object-fit="contain"
+                      quality={20}/>
+                  </div>
+                  <div className={styles.articleDetails}>
+                    <h3>{value.title}</h3>
+                    <p>{value.description}</p>
+                  </div>
                 </a>
               </Link>
           })}

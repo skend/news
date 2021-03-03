@@ -38,11 +38,28 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  flex-direction: row;
 }
 
 .card:hover, .card:focus, .card:active {
   color: #0070f3;
   border-color: #0070f3;
+}
+
+.imagebox {
+  max-height: 120px;
+  max-width: 120px;
+  height: 120px;
+  position: relative;
+  align-self: flex-start;
+}
+
+.imagebox img {
+  object-fit: cover;
+}
+
+.articleDetails {
+  align-self: flex-end;
 }
 
 .card h3 {
